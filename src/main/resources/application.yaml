@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: licensePracticeProject
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3309/wordpress
+    username: root
+    password: 1234
+server:
+  port: 8800
+
+mybatis:
+  mapper-locations: mybatis/mapper/*.xml
+
+logging:
+  level:
+    root: debug

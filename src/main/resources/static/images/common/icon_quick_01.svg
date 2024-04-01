@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22.256" height="18.144" viewBox="0 0 22.256 18.144">
+    <g transform="translate(.75 .79)" style="opacity:.7">
+        <path d="M15.095 5.535V3.69A3.733 3.733 0 0 0 11.321 0H3.774A3.733 3.733 0 0 0 0 3.69v1.845" transform="translate(0 11.07)" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:1.5px"/>
+        <ellipse cx="3.774" cy="3.69" rx="3.774" ry="3.69" transform="translate(3.774)" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:1.5px"/>
+        <path data-name="Shape" d="M2.83 5.415V3.57A3.706 3.706 0 0 0 0 0" transform="translate(17.925 11.19)" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:1.5px"/>
+        <path data-name="Shape" d="M0 0a3.706 3.706 0 0 1 2.838 3.575A3.706 3.706 0 0 1 0 7.149" transform="translate(14.152 .12)" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:1.5px"/>
+    </g>
+</svg>
