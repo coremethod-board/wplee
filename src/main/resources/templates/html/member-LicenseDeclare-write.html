@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +7,10 @@
     <meta name="format-detection" content="telephone=no" />
     <title>대한 약사회</title>
     <link rel="shortcut icon" href="#">
-    <link rel="stylesheet" type="text/css" href="../assets/css/common.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/animate.css">
-	<link rel="stylesheet" type="text/css" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/animate.css">
+	<link rel="stylesheet" type="text/css" href="../css/swiper-bundle.min.css">
 </head>
 <body id="login">
     <div class="wrap">
@@ -50,7 +50,7 @@
                                 <div class="usr-info-cont">
                                     <span class="user-text">김약사<em>(경기/고양)님</em></span>
                                     <a href="#a" class="mypage">My Page</a>
-                                    <img src="../assets/images/common/icon_stime.svg" alt="타임시계" class="clock">
+                                    <img src="../images/common/icon_stime.svg" alt="타임시계" class="clock">
                                     <i>09:58</i>
                                     <a href="#a" class="long-titme">연장</a>
                                 </div>
@@ -88,13 +88,13 @@
                     <div class="bg-frame"></div>   
                     <div class="license">
                         <h2 class="title-text"><span>면허신고서작성</span></h2>
-                        <div class="linence-registerframe">
+                        <div class="linence-registerframe" id="registTeb">
 							<div class="license-process">
                                 <span class="icon01 active">
                                     <em>STEP 01</em>
                                     인적사항
                                 </span>
-                                <i><img src="../assets/images/main/lience-step_arrow.svg" alt=""></i>    
+                                <i><img src="../images/main/lience-step_arrow.svg" alt=""></i>
                                 <span class="icon04">     
                                     <em>STEP 02</em>
                                     취업상황
@@ -110,25 +110,25 @@
                                         <li>
                                             <div class="input-title">성명</div>
                                             <div class="form-group popinput">
-                                                <input type="text" class="input-control" id="" value="김약사" placeholder="" readonly>																
+                                                <input type="text" class="input-control" id="writeName">
                                             </div>
                                         </li>
                                         <li>
                                             <div class="input-title">면허번호</div>
                                             <div class="form-group popinput">
-                                                <input type="text" class="input-control" id="" placeholder="" value="999" readonly>
+                                                <input type="text" class="input-control" id="writeLicenseNo">
                                             </div>
                                         </li>
                                         <li>
                                             <div class="input-title">면허발급 연도<span>*</span></div>
                                             <div class="form-group popinput">
-                                                <input type="text" class="input-control" id="" placeholder="4자리의 발급 연도(예: 1980)">
+                                                <input type="text" class="input-control" id="writeLicenseYear" placeholder="4자리의 발급 연도(예: 1980)">
                                             </div>
                                         </li>
                                         <li>
                                             <div class="input-title">Email</div>
                                             <div class="form-group popinput">
-                                                <input type="text" class="input-control" id="" placeholder="이메일 주소 입력">
+                                                <input type="text" class="input-control" id="writeEmail" placeholder="이메일 주소 입력">
                                             </div>
                                         </li>
                                         <li>
@@ -138,29 +138,29 @@
                                                 <span class="btn-r"><button type="button" class="btn-frame  default bg-gray">주소검색</button></span>																
                                             </div>
                                             <div class="form-group popinput">
-                                                <input type="text" class="input-control" id="" placeholder="기본 주소">
+                                                <input type="text" class="input-control" id="writeBasicAddress" placeholder="기본 주소">
                                             </div>
                                             <div class="form-group popinput">
-                                                <input type="text" class="input-control" id="" placeholder="상세 주소 주소">
+                                                <input type="text" class="input-control" id="writeDetailAddress" placeholder="상세 주소 주소">
                                             </div>                                          
                                         </li>
                                         <li>
                                             <div class="input-title">일반전화</div>
                                             <div class="form-group popinput">
-                                                <input type="text" class="input-control" placeholder="-없이 숫자만 입력(지역번호 포함)">	                                             														
+                                                <input type="text" class="input-control" id="writeAreaTelNo" placeholder="-없이 숫자만 입력(지역번호 포함)">
                                             </div>             
                                         </li>
                                         <li>
                                             <div class="input-title">휴대전화<span>*</span></div>
                                             <div class="form-group popinput">
-                                                <input type="text" class="input-control" placeholder="-없이 숫자만 입력                                                ">	                                             														
+                                                <input type="text" class="input-control" id="writePrivateTelNo" placeholder="-없이 숫자만 입력                                                ">
                                             </div>             
                                         </li>
                                     </ul>                                   
                                 </div>
                                 <div class="foot-btn">
                                     <button type="button" class="close-btn  btn-frame middle outline black">취소</button>
-                                    <button type="button" class="btn-frame gray middle bg-black01 ml10">다음단계</button>
+                                    <button type="button" class="btn-frame gray middle bg-black01 ml10" id="nextBtn">다음단계</button>
                                 </div>
                             </div>  				
                         </div>
@@ -258,33 +258,18 @@
             </ul>      
         </div>
     </aside>
-    <!--//전체메뉴 Ed-->		
-    <!--floating menu St-->
-    <div class="floatMunu">
-        <a href="#a">
-            <div class="floatInner">
-                <div class="flattext_ko">
-                    묻고 답하기 
-                </div>
-                <div class="flattext_en">
-                    Q&A 
-                </div>
-                <div class="flatIimg">
-                    <img src="../assets/images/common/float_img.gif" alt="묻고답하기">
-                </div>                  
-            </div>
-            <div class="floatfoot">
-                바로가기<img src="../assets/images/common/direct_arrow.gif" alt="">
-            </div>
-        </a>
-    </div>
-<!--//floating menu Ed-->
+    <!--//전체메뉴 Ed-->
     <button  type="button" class="btTop-mobile">
-        <span><img src="../assets/images/common/arrow_top.svg" alt="top">TOP</span>
+        <span><img src="../images/common/arrow_top.svg" alt="top">TOP</span>
     </button>     
-    <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/basic.js"></script>
-    <script src="../assets/js/swiper-bundle.min.js"></script>
-    <script src="../assets/js/jquery-scrolltofixed.js"></script>  
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/basic.js"></script>
+    <script src="../js/swiper-bundle.min.js"></script>
+    <script src="../js/jquery-scrolltofixed.js"></script>
+    <script src="../js/licenseRegist/licenseRegist.js"></script>
+    <script>
+        nextStep("nextBtn","registTeb");
+    </script>
+
 </body>
 </html>
